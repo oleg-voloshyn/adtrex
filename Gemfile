@@ -14,4 +14,6 @@ gem 'spring', group: :development # Spring speeds up development by keeping your
 
 group :development, :test do
   gem 'mysql2' # A modern, simple and very fast Mysql library
+  gem 'rspec' #Behaviour Driven Development framework
+  gem 'rspec-rails' # Testing framework for rails
 end
