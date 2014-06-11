@@ -1,0 +1,7 @@
+= simple_form_for @jumping do |f|
+  /* = f.input :type do */
+    = f.select  :type, Jumping::TYPE
+  = f.input :name
+  = f.input :height
+  = f.input :free_height
+  = f.button  :submit
