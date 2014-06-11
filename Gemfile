@@ -25,5 +25,6 @@ group :development, :test do
   gem 'factory_girl_rails' # Fixtures replacement with a straightforward definition syntax
   gem 'ffaker' # Library for generating fake data
   gem 'shoulda-matchers' # Collection of testing matchers extracted
+  gem 'simplecov', require: false # Code coverage tool
   gem 'pry' # An IRB alternative and runtime developer console
 end

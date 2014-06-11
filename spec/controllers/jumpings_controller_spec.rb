@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe JumpingsController, type: :controller do
-  let(:jumping) { FactoryGirl.build(:jumping) }
+  let(:jumping) { FactoryGirl.create(:jumping) }
   let(:valid_params) { FactoryGirl.attributes_for(:jumping) }
   let(:invalid_params) { FactoryGirl.attributes_for(:jumping, name: '') }
 
@@ -11,6 +11,13 @@ RSpec.describe JumpingsController, type: :controller do
 
     it { should respond_with(:success) }
     it { should render_template(:new) }
+  end
+
+  describe '#show' do
+    before { get :show, id: jumping }
+
+    it { should respond_with(:success) }
+    it { should render_template(:show) }
   end
 
   describe '#create' do
