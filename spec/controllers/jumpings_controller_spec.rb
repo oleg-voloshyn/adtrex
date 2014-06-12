@@ -6,14 +6,21 @@ RSpec.describe JumpingsController, type: :controller do
   let(:invalid_params) { FactoryGirl.attributes_for(:jumping, name: '') }
 
 
-  describe '#new' do
+  context '#index' do
+    before { get :index }
+
+    it { should respond_with(:success) }
+    it { should render_template(:index) }
+  end
+
+  context '#new' do
     before { get :new, jumping: jumping }
 
     it { should respond_with(:success) }
     it { should render_template(:new) }
   end
 
-  describe '#show' do
+  context '#show' do
     before { get :show, id: jumping }
 
     it { should respond_with(:success) }
@@ -36,4 +43,35 @@ RSpec.describe JumpingsController, type: :controller do
       it { should render_template(:new) }
     end
   end
+
+  context '#edit' do
+    before { get :edit, id: jumping }
+
+    it { should respond_with(:success) }
+    it { should render_template(:edit) }
+  end
+
+  describe '#update' do
+
+    context 'whith valid params' do
+      before { put :update, id: jumping, jumping: valid_params }
+
+      it { should respond_with(:success) }
+      it { should render_template(:show) }
+    end
+
+    context 'whith invalid params' do
+      before { put :update, id: jumping, jumping: invalid_params }
+
+      it { should respond_with(:success) }
+      it { should render_template(:edit) }
+    end
+  end
+
+  context '#destroy' do
+    before {delete :destroy, id: jumping }
+
+    it { should redirect_to(root_path)  }
+  end
+
 end
