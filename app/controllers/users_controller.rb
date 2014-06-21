@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  before_filter :correct_user,  only: [:edit, :update]
   before_filter :find_user,     only: [:show, :edit, :update, :destroy]
 
   def index
@@ -36,10 +35,6 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation)
-  end
-
-  def correct_user
-    redirect_to(root_path) unless current_user?(@user)
   end
 
   def find_user
