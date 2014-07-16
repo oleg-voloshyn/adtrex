@@ -1,10 +1,12 @@
 class CreateJumpings < ActiveRecord::Migration
   def change
     create_table :jumpings do |t|
-      t.string  :type
+      t.integer :format
+      t.string  :image
       t.string  :name
+      t.string  :location
       t.integer :height
-      t.integer :free_height
+      t.string  :description
 
       t.timestamps
     end

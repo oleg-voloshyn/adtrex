@@ -1,7 +1,10 @@
-= simple_form_for @jumping do |f|
+= simple_form_for @jumping, html: { multipart: true } do |f|
   /* = f.input :type do */
     = f.select  :type, Jumping::TYPE
+  = f.file_field :image
   = f.input :name
+  = f.input :location
   = f.input :height
-  = f.input :free_height
+  = f.input :description
+  = f.input :remote_image_url
   = f.button  :submit

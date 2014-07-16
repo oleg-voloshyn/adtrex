@@ -4,18 +4,22 @@ p= link_to 'Create new Jump', new_jumping_path
 
 table
   th
+    td= 'Image'
     td= 'Name'
+    td= 'Location'
     td= 'Height'
-    td= 'Free Height'
+    td= 'Description'
     td= ''
     td= ''
     td= ''
 
   - @jumpings.each do |jump|
     tr
+      td= jump.image
       td= jump.name
+      td= jump.location
       td= jump.height
-      td= jump.free_height
+      td= jump.description
       td= link_to 'Show', jumping_path(jump)
       td= link_to 'Edit', edit_jumping_path(jump)
       td= link_to 'Destroy', jumping_path(jump), method: :delete, data: { confirm: 'Are you sure?' }

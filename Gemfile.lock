@@ -29,6 +29,11 @@ GEM
       tzinfo (~> 1.1)
     arel (5.0.1.20140414130214)
     builder (3.2.2)
+    carrierwave (0.10.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+      mime-types (>= 1.16)
     coderay (1.1.0)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
@@ -92,6 +97,7 @@ GEM
     rake (10.3.2)
     rdoc (4.1.1)
       json (~> 1.4)
+    rmagick (2.13.2)
     rspec (3.0.0)
       rspec-core (~> 3.0.0)
       rspec-expectations (~> 3.0.0)
@@ -112,6 +118,7 @@ GEM
       rspec-mocks (~> 3.0.0)
       rspec-support (~> 3.0.0)
     rspec-support (3.0.0)
+    ruby-ole (1.2.11.7)
     sass (3.2.19)
     sass-rails (4.0.3)
       railties (>= 4.0.0, < 5.0)
@@ -140,6 +147,8 @@ GEM
       railties (>= 3.0, < 4.2)
       slim (~> 2.0)
     slop (3.5.0)
+    spreadsheet (0.9.7)
+      ruby-ole (>= 1.0)
     spring (1.1.3)
     sprockets (2.11.0)
       hike (~> 1.2)
@@ -173,6 +182,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  carrierwave
   coffee-rails (~> 4.0.0)
   factory_girl_rails
   ffaker
@@ -181,6 +191,7 @@ DEPENDENCIES
   mysql2
   pry
   rails (= 4.1.0)
+  rmagick
   rspec
   rspec-rails
   sass-rails (~> 4.0.3)
@@ -189,6 +200,7 @@ DEPENDENCIES
   simple_form
   simplecov
   slim-rails
+  spreadsheet
   spring
   thin
   turbolinks
