@@ -120,8 +120,8 @@ GEM
       rspec-expectations (~> 3.0.0)
       rspec-mocks (~> 3.0.0)
       rspec-support (~> 3.0.0)
-    ruby-ole (1.2.11.7)
     rspec-support (3.0.2)
+    ruby-ole (1.2.11.7)
     sass (3.2.19)
     sass-rails (4.0.3)
       railties (>= 4.0.0, < 5.0)
@@ -185,8 +185,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  carrierwave
   bcrypt-ruby
+  carrierwave
   coffee-rails (~> 4.0.0)
   factory_girl_rails
   ffaker

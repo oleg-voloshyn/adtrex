@@ -28,7 +28,7 @@ RSpec.describe UsersController, type: :controller do
     before { get :edit, id: user }
 
     context 'with current user' do
-      before { controller.stub!(:current_user).and_return(user) }
+      before { controller.stub(:current_user).and_return(user) }
 
       it { should respond_with(:success) }
       it { should render_template(:edit) }
