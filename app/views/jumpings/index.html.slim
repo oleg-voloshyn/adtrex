@@ -2,27 +2,17 @@
 = link_to 'Sign Up', signup_path
 
 p= link_to 'Create new Jump', new_jumping_path
-
-table
-  th
-    td= 'Image'
-    td= 'Name'
-    td= 'Location'
-    td= 'Height'
-    td= 'Description'
-    td= ''
-    td= ''
-    td= ''
-
+ul.thumbnails
   - @jumpings.each do |jump|
-    tr
-      td= jump.image
-      td= jump.name
-      td= jump.location
-      td= jump.height
-      td= jump.description
-      td= link_to 'Show', jumping_path(jump)
-      td= link_to 'Edit', edit_jumping_path(jump)
-      td= link_to 'Destroy', jumping_path(jump), method: :delete, data: { confirm: 'Are you sure?' }
-end
-
+    li.span4
+      .thumbnail
+        = image_tag jump.image_url(:thumb) if jump.image?
+        .caption
+          h3= jump.name
+          p= jump.location
+          p= jump.height
+          /* p= jump.description */
+          p
+            = link_to 'Show', jumping_path(jump), class: 'btn-primary btn'
+            = link_to 'Edit', edit_jumping_path(jump), class: 'btn'
+        /* = link_to 'Destroy', jumping_path(jump), method: :delete, data: { confirm: 'Are you sure?' } */
