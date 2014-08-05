@@ -1,0 +1,25 @@
+ru:
+  simple_form:
+    "yes": Да
+    "no": Нет
+    required:
+      text: "Обязательно"
+      mark: '*'
+    error_notification:
+      default_message: "Пожалуйста, ознакомьтесь с проблемами ниже:"
+    labels:
+      user:
+        first_name: Имя
+        last_name: Фамилия
+        password: Пароль
+        password_confirmation: Подтвердите пароль
+      session:
+        password: Пароль
+      jumping:
+        name: Название экзита
+        height: Высота
+        location: Местонахождение
+        description: Краткое описание
+        remote_image_url: Добавить изображение с другого сайта
+    # hints:
+  # helpers:

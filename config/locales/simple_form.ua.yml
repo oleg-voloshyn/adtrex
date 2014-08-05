@@ -1,0 +1,25 @@
+ua:
+  simple_form:
+    "yes": Так
+    "no": Ні
+    required:
+      text: "Обов'язково"
+      mark: '*'
+    error_notification:
+      default_message: "Будь ласка, ознайомтеся з проблемами нижче:"
+    labels:
+      user:
+        first_name: "Ім'я"
+        last_name: Прізвище
+        password: Пароль
+        password_confirmation: Підтвердіть пароль
+      session:
+        password: Пароль
+      jumping:
+        name: Назва екзіта
+        height: Висота
+        location: Місцезнаходження
+        description: Короткий опис
+        remote_image_url: Додати зображення з іншого сайту
+    # hints:
+  # helpers:

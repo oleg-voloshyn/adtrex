@@ -1,0 +1,6 @@
+ua:
+  layouts:
+    header:
+      home: Головна
+      signin: Увійти
+      signout: Вийти

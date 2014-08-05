@@ -1,6 +1,5 @@
 = simple_form_for :session, url: sessions_path do |f|
   = f.input :email
   = f.input :password
-  = f.button :submit
-= t('.new_user')
-= link_to t('.sign_up'), signup_path
+  = f.button :submit, t('.submit'), class: 'btn btn-primary'
+= link_to t('signup'), signup_path

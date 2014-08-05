@@ -1,0 +1,6 @@
+ru:
+  layouts:
+    header:
+      home: Главная
+      signin: Войти
+      signout: Выйти
