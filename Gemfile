@@ -20,6 +20,11 @@ gem 'spring', group: :development # Spring speeds up development by keeping your
 
 group :development do
   gem 'thin' # A very fast & simple Ruby web server
+  gem 'capistrano', '~> 3.2.1'
+  gem 'capistrano-rails'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rvm'
+  gem 'passenger'
 end
 
 group :development, :test do
