@@ -23,7 +23,6 @@ public/uploads
 
 # configuration files
 !config/locales/**/en.yml
-config/database.yml
 
 # database files
 db/backups
