@@ -27,7 +27,7 @@ group :development do
   gem 'passenger'
 end
 
-group :development, :test do
+group :development, :test, :production do
   gem 'mysql2' # A modern, simple and very fast Mysql library
   gem 'rspec' #Behaviour Driven Development framework
   gem 'rspec-rails' # Testing framework for rails
