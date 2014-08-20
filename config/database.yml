@@ -8,6 +8,7 @@ defaults: &defaults
 
 production:
   <<: *defaults
+  host: localhost
   database: adtrex_production
 
 development:
