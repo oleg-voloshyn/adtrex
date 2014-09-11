@@ -13,6 +13,7 @@ gem 'rmagick'
 gem 'carrierwave'
 gem 'spreadsheet'
 gem 'bcrypt-ruby' # To use ActiveModel has_secure_password
+gem 'lazybox'
 
 gem 'sdoc', '~> 0.4.0', group: :doc # bundle exec rake doc:rails generates the API under doc/api.
 
