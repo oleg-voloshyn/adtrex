@@ -1,4 +1,15 @@
 ua:
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              invalid: Будь ласка, введіть коректну e-mail адресу
+            password:
+              too_short: Довжина пароля не може бути менше 6 символів
+            password_confirmation:
+              confirmation: Введені паролі не збігаються
   simple_form:
     "yes": Так
     "no": Ні

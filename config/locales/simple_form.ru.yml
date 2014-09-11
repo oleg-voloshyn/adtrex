@@ -1,4 +1,16 @@
 ru:
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              invalid: Пожалуйста, введите корректный e-mail адрес
+            password:
+              too_short: Длина пароля не может быть меньше 6 символов
+            password_confirmation:
+              confirmation: Введённые пароли не совпадают
+
   simple_form:
     "yes": Да
     "no": Нет
