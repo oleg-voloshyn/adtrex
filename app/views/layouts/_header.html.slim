@@ -7,10 +7,10 @@ header
       ul#menu-nav
         li.current
           = link_to t('.home'), root_path
-        li
-          - if current_user
-            = link_to t('.signout'), signout_path, method: :delete
-          - else
-            = link_to t('.signin'), signin_path
+        - if current_user
+          li= link_to t('.signout'), signout_path, method: :delete
+        - else
+          li= link_to t('.signin'), signin_path
+          li= link_to t('signup'), signup_path, remote: true
         li= link_to_unless I18n.locale == :ua, "Українська", locale: :ua
         li= link_to_unless I18n.locale == :ru, "Русский", locale: :ru
