@@ -1,10 +1,15 @@
 /*
+ *= require_self
  *= require lazybox
  *= require_tree .
- *= require_self
  */
 
 .translation_missing {
   color: red;
   background: black;
+}
+
+#carousel-container {
+  margin: 20px auto;
+  width: 90%;
 }

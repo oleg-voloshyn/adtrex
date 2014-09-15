@@ -1,16 +1,19 @@
-header
-  .sticky-nav
-    a#mobile-nav.menu-nav href="#menu-nav"
-    #logo
-      a#goUp href="#home-slider" title=("AdTrEx")
-    nav#menu
-      ul#menu-nav
-        li.current
-          = link_to t('.home'), root_path
-        - if current_user
-          li= link_to t('.signout'), signout_path, method: :delete
-        - else
-          li= link_to t('.signin'), signin_path, remote: true
-          li= link_to t('signup'), signup_path, remote: true
-        li= link_to_unless I18n.locale == :ua, "Українська", locale: :ua
-        li= link_to_unless I18n.locale == :ru, "Русский", locale: :ru
+header#geader-area
+  .header-top
+    .container
+      .col-sm-8.col-xs-12
+        .header-links
+          ul.nav.navbar-nav.pull-left
+            li
+              = link_to t('.home'), root_path
+            - if current_user
+              li= link_to t('.signout'), signout_path, method: :delete
+              li= link_to t('.my_profile'), user_path(current_user)
+            - else
+              li= link_to t('.signin'), signin_path, remote: true
+              li= link_to t('signup'), signup_path, remote: true
+      .col-sm-4.col-xs-12
+        .pull-right
+          ul.nav.navbar-nav.pull-right
+            li= link_to_unless I18n.locale == :ua, "Укр", locale: :ua
+            li= link_to_unless I18n.locale == :ru, "Рус", locale: :ru

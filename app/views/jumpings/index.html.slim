@@ -1,4 +1,4 @@
-p= link_to t('.create_new'), new_jumping_path
+p= link_to t('.create_new'), new_jumping_path, remote: true
 ul.thumbnails
   - @jumpings.each do |jump|
     li.span4
@@ -11,5 +11,5 @@ ul.thumbnails
           /* p= jump.description */
           p
             = link_to t('show'), jumping_path(jump), class: 'btn-primary btn'
-            = link_to t('edit'), edit_jumping_path(jump), class: 'btn'
+            = link_to t('edit'), edit_jumping_path(jump), remote: true, class: 'btn'
         /* = link_to 'Destroy', jumping_path(jump), method: :delete, data: { confirm: 'Are you sure?' } */

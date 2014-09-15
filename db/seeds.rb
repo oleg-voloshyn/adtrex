@@ -1,1 +1,1 @@
-Rake::Task['db:seed:jumpings'].invoke
+# Rake::Task['db:seed:jumpings'].invoke

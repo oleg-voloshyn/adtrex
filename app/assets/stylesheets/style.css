@@ -1,0 +1,106 @@
+body{
+	background:#f4f5f5;
+	color:#252a2f;
+	font:14px/22px 'Open Sans', Arial, Helvetica, sans-serif;
+}
+
+/* Standard Styles Starts */
+
+a{
+	color:#ff8b03;
+}
+a:hover{
+}
+a:focus{
+	outline:none;
+}
+h1, h2, h3, h4, h5, h6{
+	font-family:'Roboto Condensed', Helvetica, Times New Roman, sans-serif;
+	color:#252a2f;
+}
+h1{
+	font-size:38px;
+}
+h2{
+	font-size:32px;
+}
+h3{
+	font-size:26px;
+}
+h4{
+	font-size:20px;
+}
+h5{
+	font-size:18px;
+}
+h6{
+	font-size:14px;
+}
+.main-heading{
+	font-size:30px;
+}
+.main-heading span{
+	font-size:18px;
+	color:#878a8c;
+}
+.main-heading2{
+	font-size:24px;
+}
+.main-heading,
+.main-heading2,
+.sub-heading{
+	text-transform:uppercase;
+}
+.sub-heading{
+	font-size:24px;
+	padding:10px 0;
+}
+
+
+/* Header Area Styles Starts */
+
+#header-area{
+	background:#2f353b;
+	margin-bottom:20px;
+}
+	.header-top{
+		background:#252a2f;
+	}
+
+/* Header Links Styles Starts */
+
+		.header-links ul{
+		}
+			.header-links li{
+				display:inline-block;
+			}
+			.header-links li .fa{
+				margin-right:3px;
+			}
+			.header-links li,
+			.header-links li a{
+				color:#fff;
+			}
+			.header-links li a{
+				padding:12px 15px 12px 0;
+			}
+			.header-links li a:hover,
+			.header-links li a:focus,
+			.header-links li.active a{
+				background:none;
+				color:#ffb400;
+			}
+
+/* Currency & Languages Drop Down Styles Starts */
+
+	.header-top .btn-link{
+		color:#fff;
+		text-decoration:none;
+		margin:4px 0 0 0;
+	}
+	.header-top .open .btn-link{
+		color:#ffb400;
+	}
+		.header-top .btn-link i.fa{
+			margin-left:5px;
+		}
