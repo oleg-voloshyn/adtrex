@@ -1,4 +1,7 @@
-= simple_form_for :session, url: sessions_path, remote: true do |f|
-  = f.input :email
-  = f.input :password
-  = f.button :submit, t('.submit'), class: 'btn btn-primary'
+= simple_form_for :session, url: sessions_path, html: { class: 'form-horizontal adtrex-form'}, remote: true do |f|
+  .form-group
+    = f.input :email, wrapper_html: { class: 'col-xs-11' }, input_html: { class: 'form-control' }
+  .form-group
+    = f.input :password, wrapper_html: { class: 'col-xs-11' }, input_html: { class: 'form-control' }
+  .form-group
+    = f.button :submit, t('.submit'), class: 'btn btn-primary'

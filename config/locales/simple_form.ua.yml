@@ -20,8 +20,7 @@ ua:
       default_message: "Будь ласка, ознайомтеся з проблемами нижче:"
     labels:
       user:
-        first_name: "Ім'я"
-        last_name: Прізвище
+        name: "Ім'я (Нікнейм)"
         password: Пароль
         password_confirmation: Підтвердіть пароль
       session:

@@ -21,8 +21,7 @@ ru:
       default_message: "Пожалуйста, ознакомьтесь с проблемами ниже:"
     labels:
       user:
-        first_name: Имя
-        last_name: Фамилия
+        name: Имя (Никнейм)
         password: Пароль
         password_confirmation: Подтвердите пароль
       session:
