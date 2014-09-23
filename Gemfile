@@ -14,6 +14,7 @@ gem 'carrierwave'
 gem 'spreadsheet'
 gem 'bcrypt-ruby' # To use ActiveModel has_secure_password
 gem 'lazybox'
+gem 'pry' # An IRB alternative and runtime developer console
 
 gem 'sdoc', '~> 0.4.0', group: :doc # bundle exec rake doc:rails generates the API under doc/api.
 
@@ -36,5 +37,4 @@ group :development, :test, :production do
   gem 'ffaker' # Library for generating fake data
   gem 'shoulda-matchers' # Collection of testing matchers extracted
   gem 'simplecov', require: false # Code coverage tool
-  gem 'pry' # An IRB alternative and runtime developer console
 end

@@ -4,28 +4,28 @@ RSpec.describe UsersController, type: :controller do
   let(:user) { FactoryGirl.create(:user) }
 
   context '#index' do
-    before { get :index }
+    before { get :index, locale: :ua }
 
     it { should respond_with(:success) }
     it { should render_template(:index) }
   end
 
   context '#new' do
-    before { get :new, user: user }
+    before { xhr :get, :new, user: user, locale: :ua }
 
     it { should respond_with(:success) }
     it { should render_template(:new) }
   end
 
   context '#show' do
-    before { get :show, id: user }
+    before { get :show, id: user, locale: :ua }
 
     it { should respond_with(:success) }
     it { should render_template(:show) }
   end
 
   describe '#edit' do
-    before { get :edit, id: user }
+    before { get :edit, id: user, locale: :ua }
 
     context 'with current user' do
       before { controller.stub(:current_user).and_return(user) }

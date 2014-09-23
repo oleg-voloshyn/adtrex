@@ -7,21 +7,20 @@ RSpec.describe JumpingsController, type: :controller do
 
 
   context '#index' do
-    before { get :index }
-
+    before { get :index, locale: :ua }
     it { should respond_with(:success) }
     it { should render_template(:index) }
   end
 
   context '#new' do
-    before { get :new, jumping: jumping }
+    before { xhr :get, :new, jumping: jumping, locale: :ua }
 
     it { should respond_with(:success) }
     it { should render_template(:new) }
   end
 
   context '#show' do
-    before { get :show, id: jumping }
+    before { get :show, id: jumping, locale: :ua }
 
     it { should respond_with(:success) }
     it { should render_template(:show) }
@@ -30,14 +29,14 @@ RSpec.describe JumpingsController, type: :controller do
   describe '#create' do
 
     context 'whith valid params' do
-      before { post :create, jumping: valid_params }
+      before { post :create, jumping: valid_params, locale: :ua }
 
       it { should respond_with(:success) }
       it { should render_template(:show) }
     end
 
     context 'whith invalid params' do
-      before { post :create, jumping: invalid_params }
+      before { xhr :post, :create, jumping: invalid_params, locale: :ua }
 
       it { should respond_with(:success) }
       it { should render_template(:new) }
@@ -45,7 +44,7 @@ RSpec.describe JumpingsController, type: :controller do
   end
 
   context '#edit' do
-    before { get :edit, id: jumping }
+    before { xhr :get, :edit, id: jumping, locale: :ua }
 
     it { should respond_with(:success) }
     it { should render_template(:edit) }
@@ -54,14 +53,14 @@ RSpec.describe JumpingsController, type: :controller do
   describe '#update' do
 
     context 'whith valid params' do
-      before { put :update, id: jumping, jumping: valid_params }
+      before { put :update, id: jumping, jumping: valid_params, locale: :ua }
 
       it { should respond_with(:success) }
       it { should render_template(:show) }
     end
 
     context 'whith invalid params' do
-      before { put :update, id: jumping, jumping: invalid_params }
+      before { xhr :put, :update, id: jumping, jumping: invalid_params, locale: :ua }
 
       it { should respond_with(:success) }
       it { should render_template(:edit) }
@@ -69,7 +68,7 @@ RSpec.describe JumpingsController, type: :controller do
   end
 
   context '#destroy' do
-    before {delete :destroy, id: jumping }
+    before {delete :destroy, id: jumping, locale: :ua }
 
     it { should redirect_to(root_path)  }
   end
