@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  scope "/:locale" do
+  scope "(:locale)", locale: /ua|ru/ do
     root to: 'welcome#index'
 
     resources :jumpings
