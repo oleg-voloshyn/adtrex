@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140923102855) do
+ActiveRecord::Schema.define(version: 20140928165224) do
 
   create_table "jumpings", force: true do |t|
     t.integer  "format"
@@ -37,9 +37,13 @@ ActiveRecord::Schema.define(version: 20140923102855) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
+    t.string   "token"
+    t.string   "password_reset_token"
+    t.datetime "password_reset_sent_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["remember_token"], name: "index_users_on_remember_token", using: :btree
+  add_index "users", ["token"], name: "index_users_on_token", using: :btree
 
 end

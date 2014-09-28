@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :jumpings
     resources :users
     resources :sessions, only: [:new, :create, :destroy]
+    resources :password_resets, except: [:index, :show, :destroy]
 
     get '/signup', to: 'users#new'
     get '/signin', to: 'sessions#new'

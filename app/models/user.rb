@@ -12,9 +12,20 @@ class User < ActiveRecord::Base
   validates :password, presence: true, length: { minimum: 6 }
   validates :password_confirmation, presence: true
 
+  def reset_password
+    generate_token(:password_reset_token)
+    self.update_attribute(:password_reset_sent_at, Time.zone.now)
+  end
+
   private
 
   def create_remember_token
     self.remember_token = SecureRandom.urlsafe_base64
+  end
+
+  def generate_token(column)
+    begin
+      self[column] = SecureRandom.urlsafe_base64
+    end while User.exists?(column => self[column])
   end
 end
