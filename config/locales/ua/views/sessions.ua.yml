@@ -2,3 +2,4 @@ ua:
   sessions:
     form:
       submit: Увійти
+      forget_password: Забули пароль?

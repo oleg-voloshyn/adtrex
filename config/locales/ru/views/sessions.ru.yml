@@ -2,3 +2,4 @@ ru:
   sessions:
     form:
       submit: Войти
+      forget_password: Забыли пароль??
