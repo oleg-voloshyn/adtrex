@@ -1,3 +1,5 @@
+require 'sidekiq/web'
+
 Rails.application.routes.draw do
 
   scope "(:locale)", locale: /ua|ru/ do
@@ -12,4 +14,6 @@ Rails.application.routes.draw do
     get '/signin', to: 'sessions#new'
     delete '/signout', to: 'sessions#destroy'
   end
+
+  mount Sidekiq::Web, at: "/sidekiq"
 end

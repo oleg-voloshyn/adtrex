@@ -42,4 +42,5 @@ end
 
 group :development, :test do
   gem 'capistrano-sidekiq'
+  gem 'sinatra', require: false
 end
