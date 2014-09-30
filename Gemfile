@@ -10,7 +10,6 @@ gem 'jbuilder', '~> 2.0' # Build JSON APIs with ease. Read more: https://github.
 gem 'slim-rails' # A lightweight templating engine
 gem 'simple_form' # SimpleForm - Rails forms made easy (https://github.com/plataformatec/simple_form)
 gem 'sidekiq' # Simple, efficient message processing
-gem 'capistrano-sidekiq'
 gem 'rmagick'
 gem 'carrierwave'
 gem 'spreadsheet'
@@ -39,4 +38,8 @@ group :development, :test, :production do
   gem 'ffaker' # Library for generating fake data
   gem 'shoulda-matchers' # Collection of testing matchers extracted
   gem 'simplecov', require: false # Code coverage tool
+end
+
+group :development, :test do
+  gem 'capistrano-sidekiq'
 end
