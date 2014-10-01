@@ -6,7 +6,8 @@ class PasswordResetsController < ApplicationController
     user = User.find_by_email(params[:email])
     if @success = user && !flash[:error]
       user.reset_password
-      MailJob.new.async.perform(UserMailer, :password_reset, user)
+      reset_password = user.password_reset_token
+      MailJob.new.async.perform(UserMailer, :password_reset, user, reset_password)
       flash[:notice] = I18n.t('flash.reset_password.email_sent')
     else
       flash.now[:error] = params[:email].blank? ? I18n.t('flash.reset_password.email_blank') : I18n.t('flash.reset_password.user_does_not_exist')
@@ -14,12 +15,18 @@ class PasswordResetsController < ApplicationController
   end
 
   def update
-    if @success = @user.update_attributes(params[:user])
-      flash[:notice] = I18n.t('flash.reset_password.done')
+    if @success = @user.update(user_params)
+      redirect_to root_path, notice: I18n.t('flash.reset_password.done')
+    else
+      render :edit
     end
   end
 
   private
+
+  def user_params
+    params.require(:user).permit(:password, :password_confirmation)
+  end
 
   def find_user
     @user = User.find_by_password_reset_token(params[:id])

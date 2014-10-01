@@ -17,6 +17,8 @@ gem 'lazybox'
 gem 'pry' # An IRB alternative and runtime developer console
 gem 'sucker_punch'
 gem 'sdoc', '~> 0.4.0', group: :doc # bundle exec rake doc:rails generates the API under doc/api.
+gem 'passenger'
+
 
 gem 'spring', group: :development # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 
@@ -26,7 +28,7 @@ group :development do
   gem 'capistrano-rails'
   gem 'capistrano-bundler'
   gem 'capistrano-rvm'
-  gem 'passenger'
+  gem 'letter_opener'
 end
 
 group :development, :test, :production do
