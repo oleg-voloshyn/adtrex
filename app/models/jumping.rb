@@ -1,4 +1,6 @@
 class Jumping < ActiveRecord::Base
+  has_many :locations, as: :locationable
+
   validates :name, :height, presence: true
   validates :name, length: { minimum: 2, maximum: 150 }, uniqueness: true
 

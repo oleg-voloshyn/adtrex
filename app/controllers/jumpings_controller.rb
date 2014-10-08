@@ -42,6 +42,6 @@ class JumpingsController < ApplicationController
   end
 
   def jumping_params
-    params.require(:jumping).permit(:name, :height, :format, :image, :remote_image_url, :description, :location)
+    params.require(:jumping).permit(:name, :height, :format, :image, :remote_image_url, :description)
   end
 end

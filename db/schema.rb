@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140928165224) do
+ActiveRecord::Schema.define(version: 20141008173551) do
 
   create_table "jumpings", force: true do |t|
     t.integer  "format"
@@ -23,6 +23,18 @@ ActiveRecord::Schema.define(version: 20140928165224) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "locations", force: true do |t|
+    t.string   "address"
+    t.string   "latitude"
+    t.string   "longitude"
+    t.integer  "locationable_id"
+    t.string   "locationable_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "locations", ["locationable_id", "locationable_type"], name: "index_locations_on_locationable_id_and_locationable_type", using: :btree
 
   create_table "roles", force: true do |t|
     t.integer  "role_id"

@@ -14,13 +14,21 @@ gem 'carrierwave'
 gem 'spreadsheet'
 gem 'bcrypt-ruby' # To use ActiveModel has_secure_password
 gem 'lazybox'
-gem 'pry' # An IRB alternative and runtime developer console
 gem 'sucker_punch'
 gem 'sdoc', '~> 0.4.0', group: :doc # bundle exec rake doc:rails generates the API under doc/api.
 gem 'passenger'
+gem 'geocoder'
+gem 'mysql2' # A modern, simple and very fast Mysql library
 
-
-gem 'spring', group: :development # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+group :test, :development do
+  gem 'pry' # An IRB alternative and runtime developer console
+  gem 'rspec' #Behaviour Driven Development framework
+  gem 'rspec-rails' # Testing framework for rails
+  gem 'factory_girl_rails' # Fixtures replacement with a straightforward definition syntax
+  gem 'ffaker' # Library for generating fake data
+  gem 'shoulda-matchers' # Collection of testing matchers extracted
+  gem 'simplecov', require: false # Code coverage tool
+end
 
 group :development do
   gem 'thin' # A very fast & simple Ruby web server
@@ -29,14 +37,5 @@ group :development do
   gem 'capistrano-bundler'
   gem 'capistrano-rvm'
   gem 'letter_opener'
-end
-
-group :development, :test, :production do
-  gem 'mysql2' # A modern, simple and very fast Mysql library
-  gem 'rspec' #Behaviour Driven Development framework
-  gem 'rspec-rails' # Testing framework for rails
-  gem 'factory_girl_rails' # Fixtures replacement with a straightforward definition syntax
-  gem 'ffaker' # Library for generating fake data
-  gem 'shoulda-matchers' # Collection of testing matchers extracted
-  gem 'simplecov', require: false # Code coverage tool
+  gem 'spring' # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 end
