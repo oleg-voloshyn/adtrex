@@ -10,11 +10,6 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
 
   def set_locale
-    I18n.locale = params[:locale] || I18n.default_locale
+    I18n.locale = session[:locale] || I18n.default_locale
   end
-
-  def default_url_options(options = {})
-    { locale: I18n.locale }.merge options
-  end
-
 end

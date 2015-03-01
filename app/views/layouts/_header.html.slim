@@ -15,5 +15,5 @@ header#geader-area
       .col-sm-4.col-xs-12
         .pull-right
           ul.nav.navbar-nav.pull-right
-            li= link_to_unless I18n.locale == :ua, "Укр", locale: :ua
-            li= link_to_unless I18n.locale == :ru, "Рус", locale: :ru
+            li= link_to_unless current_locale?(:ua), "Укр", language_path(:ua), method: :patch
+            li= link_to_unless current_locale?(:ru), "Рус", language_path(:ru), method: :patch
