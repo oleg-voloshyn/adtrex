@@ -11,7 +11,7 @@ set :repo_url, 'git@github.com:oleg-voloshyn/adtrex.git'
 set :scm, :git
 set :default_env, { rvm_bin_path: '~/.rvm/bin' }
 set :rvm_type, :user
-set :rvm_ruby_version, '2.2.0'
+# set :rvm_ruby_version, '2.2.0'
 set :default_shell, '/bin/bash -l'
 set :keep_releases, 5
 set :branch, 'master'
