@@ -11,13 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141008173551) do
+ActiveRecord::Schema.define(version: 20141014200123) do
 
   create_table "jumpings", force: true do |t|
     t.integer  "format"
     t.string   "image"
     t.string   "name"
-    t.string   "location"
     t.integer  "height"
     t.string   "description"
     t.datetime "created_at"
