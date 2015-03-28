@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   before_filter :find_user, only: [:show, :edit, :update, :destroy]
+  skip_before_action :require_user
+  before_action :require_guest, only: [:new, :create]
 
   def index
     @users = User.all

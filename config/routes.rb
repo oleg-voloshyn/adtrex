@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'welcome#index'
 
   resources :users
-  resources :sessions, only: [:new, :create, :destroy]
+  resource :session, only: [:new, :create, :destroy]
   resources :password_resets, except: [:index, :show, :destroy]
   resources :locations
 

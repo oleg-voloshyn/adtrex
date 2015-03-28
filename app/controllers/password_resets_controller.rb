@@ -1,22 +1,34 @@
 class PasswordResetsController < ApplicationController
+  skip_before_action :require_user
+  before_action :require_guest, only: [:new, :create]
 
-  before_filter :find_user, only: [:edit, :update]
+  def new
+    @session = Session.new
+  end
 
   def create
-    user = User.find_by_email(params[:email])
-    if @success = user && !flash[:error]
-      user.reset_password
-      reset_password = user.password_reset_token
-      MailJob.new.async.perform(UserMailer, :password_reset, user, reset_password)
-      flash[:notice] = I18n.t('flash.reset_password.email_sent')
+    @session = Session.new(params[:session])
+    if user = @session.user
+      token = verifier.generate(id: user.id, expires_at: Time.now + 1.hour)
+      UserMailer.reset_password(user, token).deliver_later
+      redirect_to root_path
     else
-      flash.now[:error] = params[:email].blank? ? I18n.t('flash.reset_password.email_blank') : I18n.t('flash.reset_password.user_does_not_exist')
+      @session.errors.add(:email, :user_invalid)
+    end
+  end
+
+  def edit
+    if user_verifier[:expires_at] < 1.hour.ago
+      redirect_to new_password_reset_path
     end
   end
 
   def update
-    if @success = @user.update(user_params)
-      redirect_to root_path, notice: I18n.t('flash.reset_password.done')
+    if user_verifier && user.update(user_params)
+      reset_session
+      session[:auth_token] = user.token
+      sign_in(user)
+      redirect_to root_path
     else
       render :edit
     end
@@ -24,15 +36,16 @@ class PasswordResetsController < ApplicationController
 
   private
 
+  def user
+    @user ||= User.find(user_verifier[:id])
+  end
+  helper_method :user
+
   def user_params
     params.require(:user).permit(:password, :password_confirmation)
   end
 
-  def find_user
-    @user = User.find_by_password_reset_token(params[:id])
-    if @user.password_reset_sent_at < 2.hours.ago
-      flash[:error] = I18n.t('flash.reset_password.expired')
-    end
+  def user_verifier
+    verifier.verify(params[:id])
   end
-
 end

@@ -1,15 +1,23 @@
 class SessionsController < ApplicationController
+  skip_before_action :require_user
+  before_action :require_guest, except: :destroy
+
+  def new
+    @user_session = Session.new
+  end
+
   def create
-    user = User.find_by_email(params[:session][:email].downcase)
-    if user && user.authenticate(params[:session][:password])
-      sign_in(user)
+    @user_session = Session.new(params[:session])
+    if @user_session.valid?
+      session[:user_id] = @user_session.user_id
+      redirect_to :welcome
     else
       render :new
     end
   end
 
   def destroy
-    sign_out
-    redirect_to root_path
+    reset_session
+    redirect_to :welcome
   end
 end
