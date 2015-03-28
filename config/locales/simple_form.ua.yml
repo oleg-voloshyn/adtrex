@@ -25,11 +25,5 @@ ua:
         password_confirmation: Підтвердіть пароль
       session:
         password: Пароль
-      jumping:
-        name: Назва екзіта
-        height: Висота
-        location: Місцезнаходження
-        description: Короткий опис
-        remote_image_url: Додати зображення з іншого сайту
     # hints:
   # helpers:

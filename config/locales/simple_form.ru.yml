@@ -26,11 +26,5 @@ ru:
         password_confirmation: Подтвердите пароль
       session:
         password: Пароль
-      jumping:
-        name: Название экзита
-        height: Высота
-        location: Местонахождение
-        description: Краткое описание
-        remote_image_url: Добавить изображение с другого сайта
     # hints:
   # helpers:
