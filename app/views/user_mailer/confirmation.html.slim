@@ -1,0 +1,7 @@
+h1= t('.hey', name: @user.login)
+p= t('.registration')
+p
+  => t('.click')
+  => link_to :here, edit_user_url(token: @confirm_token, id: @user)
+  = t('.to_complete')
+br

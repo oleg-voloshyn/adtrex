@@ -22,6 +22,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc # bundle exec rake doc:rails generates the A
 gem 'passenger'
 gem 'geocoder'
 gem 'mysql2' # A modern, simple and very fast Mysql library
+gem 'letter_opener'
 
 group :test, :development do
   gem 'pry' # An IRB alternative and runtime developer console

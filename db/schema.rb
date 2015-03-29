@@ -11,50 +11,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141014200123) do
+ActiveRecord::Schema.define(version: 20141008173551) do
 
-  create_table "jumpings", force: true do |t|
-    t.integer  "format"
-    t.string   "image"
-    t.string   "name"
-    t.integer  "height"
-    t.string   "description"
+  create_table "locations", force: :cascade do |t|
+    t.string   "address",           limit: 255
+    t.string   "latitude",          limit: 255
+    t.string   "longitude",         limit: 255
+    t.integer  "locationable_id",   limit: 4
+    t.string   "locationable_type", limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "locations", force: true do |t|
-    t.string   "address"
-    t.string   "latitude"
-    t.string   "longitude"
-    t.integer  "locationable_id"
-    t.string   "locationable_type"
+  add_index "locations", ["locationable_type", "locationable_id"], name: "index_locations_on_locationable_type_and_locationable_id", using: :btree
+
+  create_table "users", force: :cascade do |t|
+    t.string   "login",           limit: 255
+    t.string   "email",           limit: 255
+    t.string   "password_digest", limit: 255
+    t.string   "token",           limit: 255
+    t.boolean  "confirmed",       limit: 1,   default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "locations", ["locationable_id", "locationable_type"], name: "index_locations_on_locationable_id_and_locationable_type", using: :btree
-
-  create_table "roles", force: true do |t|
-    t.integer  "role_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "users", force: true do |t|
-    t.string   "email"
-    t.string   "password_digest"
-    t.string   "remember_token"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "name"
-    t.string   "token"
-    t.string   "password_reset_token"
-    t.datetime "password_reset_sent_at"
-  end
-
-  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
-  add_index "users", ["remember_token"], name: "index_users_on_remember_token", using: :btree
+  add_index "users", ["email"], name: "index_users_on_email", using: :btree
   add_index "users", ["token"], name: "index_users_on_token", using: :btree
 
 end

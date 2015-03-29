@@ -1,9 +1,15 @@
 class UserMailer < ActionMailer::Base
   default from: "lord.voloshyn@gmail.com"
 
-  def password_reset(user, reset_password)
+  def confirmation(user, token)
     @user = user
-    @reset_token = reset_password
-    mail to: user.email, subject: "Adtrex Notification"
+    @confirm_token = token
+    mail to: user.email
+  end
+
+  def reset_password(user, token)
+    @user = user
+    @token = token
+    mail to: user.email
   end
 end
