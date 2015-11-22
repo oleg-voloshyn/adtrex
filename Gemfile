@@ -11,7 +11,7 @@ gem 'turbolinks' # Turbolinks makes following links in your web application fast
 gem 'jquery-turbolinks', '~> 2.1.0'
 gem 'jbuilder', '~> 2.0' # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'slim-rails' # A lightweight templating engine
-gem 'simple_form' # SimpleForm - Rails forms made easy (https://github.com/plataformatec/simple_form)
+gem 'simple_form', '~>3.1.0' # SimpleForm - Rails forms made easy (https://github.com/plataformatec/simple_form)
 gem 'rmagick'
 gem 'carrierwave'
 gem 'spreadsheet'
@@ -22,24 +22,24 @@ gem 'sdoc', '~> 0.4.0', group: :doc # bundle exec rake doc:rails generates the A
 gem 'passenger'
 gem 'geocoder'
 gem 'mysql2' # A modern, simple and very fast Mysql library
-gem 'letter_opener'
+gem 'capistrano', '~> 3.2.1'
+gem 'capistrano-rails'
+gem 'capistrano-bundler'
+gem 'capistrano-rvm'
 
 group :test, :development do
-  gem 'pry' # An IRB alternative and runtime developer console
-  gem 'rspec' #Behaviour Driven Development framework
-  gem 'rspec-rails' # Testing framework for rails
-  gem 'factory_girl_rails' # Fixtures replacement with a straightforward definition syntax
-  gem 'ffaker' # Library for generating fake data
-  gem 'shoulda-matchers' # Collection of testing matchers extracted
-  gem 'simplecov', require: false # Code coverage tool
-end
-
-group :development do
-  gem 'thin' # A very fast & simple Ruby web server
-  gem 'capistrano', '~> 3.2.1'
-  gem 'capistrano-rails'
-  gem 'capistrano-bundler'
-  gem 'capistrano-rvm'
-  gem 'letter_opener'
-  gem 'spring' # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'capybara',           '~> 2.4.4'
+  gem 'capybara-screenshot', '~> 1.0.5'
+  gem 'database_cleaner',   '~> 1.4.0'
+  gem 'factory_girl_rails', '~> 4.5.0'
+  gem 'kaminari-rspec'
+  gem 'letter_opener',      '~> 1.3.0'
+  gem 'poltergeist',        '~> 1.6.0'
+  gem 'pry',                '~> 0.10.1'
+  gem 'quiet_assets',       '~> 1.1.0'
+  gem 'rspec-rails'
+  gem 'simplecov',          '~> 0.9.1', require: false
+  gem 'thin',               '~> 1.6.3'
+  gem 'traceroute',         '~> 0.4.0'
+  gem 'spring'
 end
